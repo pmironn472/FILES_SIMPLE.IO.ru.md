@@ -2,6 +2,7 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -12,22 +13,30 @@ public class App {
         double totalPrice = 75.00+45.00+9.50;
 
         FileWriter fw = new FileWriter("orders.txt");
-        fw.write(pizza + kebab + cola);
+        fw.write(pizza + kebab + cola + "\n");
         fw.close();
+
+
 
         File file = new File("orders.txt");
 
-        if (file.exists()) {
 
-            for (int i = 0; i < file.length(); i++) {
-                Scanner scanner = new Scanner(file);
-                pizza = scanner.nextLine();
-                kebab = scanner.nextLine();
-                cola = scanner.nextLine();
-            }
-            System.out.println(pizza + "\n" + kebab + "\n" + cola);
-            System.out.print("The total price will be >>>>> " + totalPrice);
+        if (file.exists())
+            System.out.println("File Found");
+        else System.err.println("File Not Found");
+
+
+        System.out.println();
+
+        Scanner in = new Scanner(file);
+            for(int i = 0; i < 3;i++){
+                String data = in.nextLine();
+                System.out.println(data);
+
         }
+        System.out.println();
+        System.out.println("The total price will be >>>>>> " + totalPrice);
+
 
 
     }
