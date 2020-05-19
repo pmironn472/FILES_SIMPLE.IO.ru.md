@@ -10,10 +10,11 @@ public class App {
         String pizza = "Pizza 75.00 2\n";
         String kebab = "Kebab 45.00 1\n";
         String cola = "Cola 9.50 3";
+        String totalprice= "The total price will be >>>>>> ";
         double totalPrice = 75.00+45.00+9.50;
 
         FileWriter fw = new FileWriter("orders.txt");
-        fw.write(pizza + kebab + cola + "\n");
+        fw.write(pizza + kebab + cola + "\n"+totalprice+ totalPrice);
         fw.close();
 
 
@@ -29,14 +30,10 @@ public class App {
         System.out.println();
 
         Scanner in = new Scanner(file);
-            for(int i = 0; i < 3;i++){
+            for(int i = 0; i < 4;i++){
                 String data = in.nextLine();
                 System.out.println(data);
-
         }
-        System.out.println();
-        System.out.println("The total price will be >>>>>> " + totalPrice);
-
 
 
     }
