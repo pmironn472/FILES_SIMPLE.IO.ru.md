@@ -1,0 +1,4 @@
+Pizza 75.00 2
+Kebab 45.00 1
+Cola 9.50 3
+The total price will be >>>>>> 128.50
